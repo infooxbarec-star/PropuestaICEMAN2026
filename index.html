@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SONA × NextWebEC — Propuesta comercial 2026</title>
+<meta name="description" content="Propuesta comercial de NextWebEC para SONA: tienda digital desde cero, carrito, delivery en Ecuador, test de diagnóstico auditivo, leads automatizados y analytics.">
+<meta name="theme-color" content="#0a1f3d">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SONA × NextWebEC — Propuesta comercial 2026">
+<meta property="og:description" content="Diseño y desarrollo de la tienda digital de SONA para su lanzamiento en Ecuador.">
+<meta property="og:locale" content="es_EC">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230a1f3d'/%3E%3Crect x='36' y='27' width='16' height='46' rx='8' fill='%23e8d5b0'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- ============================================================
+  TODO ANTES DE ENVIAR / PUBLICAR (Jose / NextWebEC):
+  1. Confirmar que el número de WhatsApp (593 96 934 9833) es el correcto para esta propuesta.
+  2. Ajustar la fecha de validez de la propuesta si aplica.
+  3. Revisar nombres exactos de los 2 productos SONA cuando estén definidos (hoy se usan como "Producto 01 / 02" genéricos).
+============================================================= -->
+
+<style>
+:root{
+  --navy:#0a1f3d;
+  --navy-2:#0d2547;
+  --navy-3:#142d54;
+  --line:rgba(232,213,176,0.18);
+  --cream:#e8d5b0;
+  --cream-2:#f4e8cf;
+  --ink:#f4f1ea;
+  --muted:rgba(244,241,234,0.6);
+  --orange:#ff6b35;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{overflow-x:hidden}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--navy);
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% 0%, rgba(232,213,176,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 60% at 80% 100%, rgba(255,107,53,0.05) 0%, transparent 60%);
+}
+.wrap{max-width:1360px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+.mono{font-family:'JetBrains Mono',monospace}
+img{max-width:100%;display:block}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
+}
+
+/* ─── Fade-in ────────────────────────────────────────────────── */
+.fi{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease), transform .7s var(--ease)}
+.fi.in{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.06s}
+.d2{transition-delay:.12s}
+.d3{transition-delay:.18s}
+.d4{transition-delay:.24s}
+
+/* ─── Top bar ─────────────────────────────────────────────────── */
+.topbar{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:28px clamp(20px,4vw,56px);
+  border-bottom:1px solid var(--line);
+  flex-wrap:wrap;
+  position:sticky;top:0;z-index:50;
+  background:rgba(10,31,61,0.86);backdrop-filter:blur(14px);
+}
+.brand{display:flex;align-items:center;gap:14px}
+.brand-icon{
+  width:28px;height:40px;border-radius:999px;
+  background:linear-gradient(180deg,#f3e4c2 0%,#d8c195 100%);
+  box-shadow:inset 0 -6px 12px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.15);
+  flex-shrink:0;
+}
+.brand-name{font-weight:800;font-size:21px;letter-spacing:-0.02em;white-space:nowrap}
+.brand-name .accent{color:var(--cream)}
+.client-pill{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:9px 16px;border-radius:999px;
+  border:1px solid var(--line);
+  font-size:12px;font-weight:600;letter-spacing:0.04em;
+  text-decoration:none;color:inherit;
+}
+.client-pill .dot{width:7px;height:7px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 4px rgba(255,107,53,0.15);flex-shrink:0}
+.client-pill .label{color:var(--muted);font-weight:500;text-transform:uppercase;letter-spacing:0.1em;font-size:10px}
+.client-pill strong{color:var(--cream);font-weight:700}
+
+/* ─── Section spacing ────────────────────────────────────────── */
+section{padding:clamp(64px,8vw,96px) 0}
+.eyebrow{
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--cream);opacity:0.85;
+  display:inline-flex;align-items:center;gap:10px;
+  margin-bottom:22px;
+}
+.eyebrow::before{content:"";width:24px;height:1px;background:var(--cream);opacity:0.6}
+
+/* ─── Hero ───────────────────────────────────────────────────── */
+.hero{padding-top:clamp(56px,7vw,88px)}
+.hero h1{
+  font-weight:900;font-size:clamp(34px,5.4vw,78px);
+  letter-spacing:-0.035em;line-height:1.04;
+  margin:0 0 26px;max-width:20ch;
+}
+.hero h1 .em{color:var(--cream)}
+.hero .lede{
+  font-size:clamp(15px,1.6vw,18px);line-height:1.6;max-width:62ch;
+  color:var(--muted);margin:0 0 40px;font-weight:500;
+}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px 28px;margin:0 0 40px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;color:var(--muted)}
+.hero-meta strong{color:var(--cream);font-weight:600}
+.hero-cta{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:16px 24px;border-radius:6px;
+  font-family:'Inter';font-size:12px;font-weight:700;
+  letter-spacing:0.1em;text-transform:uppercase;
+  border:1px solid transparent;cursor:pointer;
+  text-decoration:none;transition:transform .2s var(--ease),box-shadow .2s var(--ease),background .2s var(--ease);
+  min-height:44px;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn-primary{background:var(--cream);color:var(--navy)}
+.btn-primary:hover{box-shadow:0 12px 28px -10px rgba(232,213,176,0.5)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn .arrow{font-size:16px}
+
+/* ─── KPI grid ───────────────────────────────────────────────── */
+.kpi-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  margin-top:56px;
+}
+.kpi{
+  background:var(--navy-2);padding:32px 28px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  min-height:196px;
+}
+.kpi .num{font-weight:900;font-size:38px;line-height:1;letter-spacing:-0.03em;color:var(--cream);font-variant-numeric:tabular-nums}
+.kpi .num .unit{font-size:22px;opacity:0.85;margin-left:2px}
+.kpi .label{font-size:12.5px;color:var(--muted);font-weight:500;line-height:1.45;margin-top:16px;max-width:24ch}
+.kpi .label em{font-style:normal;color:var(--cream);opacity:0.8}
+.kpi .tag{font-size:10px;color:var(--cream);letter-spacing:0.14em;text-transform:uppercase;font-weight:600;margin-bottom:auto}
+
+/* ─── Section titles reused ──────────────────────────────────── */
+.sec-title{font-weight:900;font-size:clamp(28px,4vw,46px);letter-spacing:-0.03em;line-height:1.08;margin:0 0 16px;max-width:24ch}
+.sec-sub{font-size:15.5px;color:var(--muted);max-width:62ch;margin:0 0 52px;line-height:1.6}
+
+/* ─── Scope grid (Alcance) ───────────────────────────────────── */
+.scope-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.scope-card{background:var(--navy-2);padding:30px 26px;display:flex;flex-direction:column;gap:16px;transition:background .3s var(--ease)}
+.scope-card:hover{background:var(--navy-3)}
+.scope-num{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--cream);letter-spacing:0.14em}
+.scope-icon{width:44px;height:44px;border-radius:12px;background:rgba(232,213,176,0.08);border:1px solid rgba(232,213,176,0.16);display:flex;align-items:center;justify-content:center}
+.scope-card h3{font-size:15.5px;font-weight:800;letter-spacing:-0.01em;margin:0;line-height:1.25}
+.scope-card p{font-size:12.8px;color:var(--muted);line-height:1.55;margin:0}
+
+/* ─── Chart / Test block ─────────────────────────────────────── */
+.chart-block{
+  display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(28px,5vw,80px);align-items:center;
+  background:var(--navy-2);border:1px solid var(--line);border-radius:18px;
+  padding:clamp(28px,5vw,64px);
+}
+.chart-block h2{font-weight:900;font-size:clamp(24px,3vw,38px);letter-spacing:-0.03em;line-height:1.1;margin:0 0 18px}
+.chart-block p{color:var(--muted);font-size:14.5px;line-height:1.6;margin:0 0 20px}
+.disclaimer{font-size:12px;color:var(--muted);line-height:1.55;padding:14px 16px;border-left:2px solid var(--orange);background:rgba(255,107,53,0.06);border-radius:4px}
+.test-steps{display:flex;flex-direction:column;gap:0}
+.test-step{display:grid;grid-template-columns:36px 1fr;gap:16px;padding:18px 0;border-top:1px solid var(--line)}
+.test-step:first-child{border-top:0;padding-top:0}
+.test-step .node{width:32px;height:32px;border-radius:50%;background:var(--cream);color:var(--navy);font-family:'JetBrains Mono',monospace;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.test-step h4{margin:0 0 5px;font-size:14.5px;font-weight:700;letter-spacing:-0.005em}
+.test-step p{margin:0;font-size:12.8px;color:var(--muted);line-height:1.5}
+
+/* ─── Analytics section ─────────────────────────────────────── */
+.analytics-shell{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,0.9fr);gap:24px;align-items:stretch}
+.analytics-copy,.analytics-preview{background:var(--navy-2);border:1px solid var(--line);border-radius:18px}
+.analytics-copy{padding:clamp(28px,4vw,48px)}
+.analytics-copy h2{font-weight:900;font-size:clamp(24px,3vw,38px);letter-spacing:-0.03em;line-height:1.1;margin:0 0 16px;max-width:16ch}
+.analytics-copy p{color:var(--muted);font-size:14.5px;line-height:1.6;margin:0 0 28px;max-width:58ch}
+.analytics-list{display:grid;gap:16px}
+.analytics-item{display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:start;padding:16px 0;border-top:1px solid var(--line)}
+.analytics-item:first-child{padding-top:0;border-top:0}
+.analytics-icon{width:52px;height:52px;border-radius:13px;background:rgba(232,213,176,0.08);border:1px solid rgba(232,213,176,0.16);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.analytics-item h3{font-size:15.5px;line-height:1.25;letter-spacing:-0.005em;margin:0 0 5px;font-weight:800}
+.analytics-item p{margin:0;color:var(--muted);font-size:12.8px;line-height:1.5;max-width:none}
+.analytics-preview{padding:22px;display:grid;gap:16px;align-content:start}
+.analytics-svg-card{background:var(--navy-3);border:1px solid var(--line);border-radius:14px;padding:18px}
+.analytics-svg-card .mini-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--cream);margin-bottom:12px}
+.analytics-svg-card svg{width:100%;height:88px;display:block}
+.analytics-svg-card .mini-note{font-size:11.5px;line-height:1.45;color:var(--muted);margin-top:10px}
+.analytics-footer{padding:18px 20px;border-radius:14px;background:rgba(232,213,176,0.05);border:1px solid rgba(232,213,176,0.14)}
+.analytics-footer strong{display:block;font-size:13.5px;letter-spacing:-0.005em;margin-bottom:5px}
+.analytics-footer span{color:var(--muted);font-size:12px;line-height:1.5}
+
+/* ─── Timeline ───────────────────────────────────────────────── */
+.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:44px;position:relative}
+.timeline::before{content:"";position:absolute;top:16px;left:3%;right:3%;height:1px;background:linear-gradient(90deg,transparent 0%,var(--cream) 8%,var(--cream) 92%,transparent 100%);opacity:0.35}
+.t-step{position:relative;padding-top:44px;text-align:left;padding-right:20px}
+.t-step .node{position:absolute;top:6px;left:0;width:20px;height:20px;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:var(--navy);font-family:'JetBrains Mono',monospace;box-shadow:0 0 0 5px var(--navy),0 0 0 6px var(--cream)}
+.t-step .when{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--cream);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:8px;font-weight:600}
+.t-step .what{font-weight:700;font-size:14.5px;line-height:1.25;margin-bottom:6px;letter-spacing:-0.01em}
+.t-step .desc{font-size:12px;color:var(--muted);line-height:1.5}
+
+/* ─── Investment ────────────────────────────────────────────── */
+.inv-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:20px}
+.inv-card{background:var(--navy-2);border:1px solid var(--line);border-radius:18px;padding:clamp(28px,4vw,40px) clamp(24px,3vw,36px);display:flex;flex-direction:column;position:relative}
+.inv-card .tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--cream);font-weight:600;margin-bottom:22px}
+.inv-card h3{font-weight:900;font-size:clamp(20px,2.2vw,26px);letter-spacing:-0.02em;margin:0 0 20px;line-height:1.2}
+.price-old{font-size:17px;color:var(--muted);text-decoration:line-through;font-weight:700;font-variant-numeric:tabular-nums}
+.inv-card .price{font-weight:900;font-size:clamp(38px,4.5vw,52px);letter-spacing:-0.03em;color:var(--cream);font-variant-numeric:tabular-nums;line-height:1;margin:6px 0 8px}
+.inv-card .price .small{font-size:15px;opacity:0.7;font-weight:700;margin-left:4px}
+.inv-card .price-note{font-size:12px;color:var(--muted);margin-bottom:28px;font-weight:500}
+.inv-card ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:13px;border-top:1px solid var(--line);padding-top:22px}
+.inv-card li{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;gap:16px}
+.inv-card li .what{color:var(--ink);font-weight:500}
+.inv-card li .val{font-family:'JetBrains Mono',monospace;color:var(--cream);font-weight:600;font-size:12px;white-space:nowrap}
+.inv-card.feat{background:linear-gradient(160deg,#142d54 0%,#0a1f3d 100%);border-color:rgba(232,213,176,0.5);box-shadow:0 30px 60px -30px rgba(232,213,176,0.15)}
+.inv-card .badge{position:absolute;top:-12px;left:32px;background:var(--orange);color:var(--navy);font-size:10px;font-weight:800;letter-spacing:0.14em;padding:6px 12px;border-radius:999px;text-transform:uppercase}
+.inv-note{margin-top:22px;font-size:12.5px;color:var(--muted);text-align:center}
+
+/* ─── Final CTA ─────────────────────────────────────────────── */
+.cta-strip{margin-top:56px;text-align:center;padding:clamp(32px,5vw,48px);border:1px solid var(--line);border-radius:18px;background:linear-gradient(160deg,#0d2547 0%,#0a1f3d 100%)}
+.cta-strip h3{font-weight:900;font-size:clamp(24px,3.4vw,36px);letter-spacing:-0.025em;margin:0 0 12px;line-height:1.15}
+.cta-strip p{color:var(--muted);font-size:14.5px;max-width:56ch;margin:0 auto 24px;line-height:1.6}
+.next-steps{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:28px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);letter-spacing:0.04em}
+.next-steps strong{color:var(--cream)}
+.cta-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* ─── Footer ────────────────────────────────────────────────── */
+footer{border-top:1px solid var(--line);padding:44px clamp(20px,4vw,56px);margin-top:8px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:22px}
+footer .sign{display:flex;align-items:center;gap:14px}
+footer .sign .brand-icon{width:22px;height:32px}
+footer .sign .brand-name{font-size:17px}
+footer .meta{display:flex;gap:26px;flex-wrap:wrap;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.1em;color:var(--muted);text-transform:uppercase}
+footer .meta a{color:var(--cream);text-decoration:none;font-weight:600}
+
+/* ─── WhatsApp float ─────────────────────────────────────────── */
+.wa-float{position:fixed;bottom:24px;right:24px;width:58px;height:58px;border-radius:50%;background:#25D366;box-shadow:0 4px 24px rgba(37,211,102,.42);display:flex;align-items:center;justify-content:center;z-index:60;text-decoration:none;transition:transform .24s,box-shadow .24s}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float::before{content:'';position:absolute;inset:0;border-radius:50%;background:#25D366;animation:wa-ring 2.5s ease-out infinite;z-index:-1}
+@keyframes wa-ring{0%{transform:scale(1);opacity:.55}100%{transform:scale(1.9);opacity:0}}
+.wa-float svg{width:28px;height:28px}
+
+/* ─── Responsive ─────────────────────────────────────────────── */
+@media (max-width:980px){
+  .kpi-grid{grid-template-columns:repeat(2,1fr)}
+  .scope-grid{grid-template-columns:repeat(2,1fr)}
+  .chart-block{grid-template-columns:1fr}
+  .analytics-shell{grid-template-columns:1fr}
+  .timeline{grid-template-columns:repeat(3,1fr);row-gap:36px}
+  .inv-grid{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .topbar{padding:20px 20px}
+  .brand-name{font-size:18px}
+  .client-pill .label{display:none}
+  .kpi-grid{grid-template-columns:1fr}
+  .scope-grid{grid-template-columns:1fr}
+  .timeline{grid-template-columns:1fr;row-gap:28px}
+  .timeline::before{display:none}
+  .t-step{padding-right:0}
+  .hero-cta .btn,.cta-buttons .btn{width:100%;justify-content:center}
+  .hero-cta,.cta-buttons{flex-direction:column;align-items:stretch}
+  footer{flex-direction:column;align-items:flex-start}
+  .wa-float{bottom:18px;right:18px;width:52px;height:52px}
+  .wa-float svg{width:25px;height:25px}
+}
+
+/* Print-friendly */
+@media print{
+  body{background:white;color:black}
+  section{padding:32px 0;page-break-inside:avoid}
+  .wa-float{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ─── TOP BAR ────────────────────────────────────────────────── -->
+<div class="topbar">
+  <div class="brand">
+    <div class="brand-icon"></div>
+    <div class="brand-name">Next<span class="accent">WebEC</span></div>
+  </div>
+  <a class="client-pill" href="#inversion">
+    <span class="dot"></span>
+    <span class="label">Propuesta para</span>
+    <strong>SONA</strong>
+  </a>
+</div>
+
+<!-- ─── HERO ───────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow fi">Propuesta comercial · SONA · 2026</div>
+    <h1 class="fi d1">SONA no vende audífonos. Vende <span class="em">volver a escuchar</span>.</h1>
+    <p class="lede fi d2">NextWebEC diseña y construye desde cero la tienda digital de SONA para su llegada a Ecuador: audífonos OTC (venta libre), aprobados por la FDA, pensados para quienes están perdiendo la audición. Carrito de compras, delivery a nivel nacional, un test de diagnóstico auditivo interactivo y captura automática de leads — todo en un solo sitio, construido a medida.</p>
+    <div class="hero-meta fi d2">
+      <span>Preparado para: <strong>SONA</strong></span>
+      <span>Por: <strong>NextWebEC — José Guerrero</strong></span>
+      <span>Fecha: <strong>27 de julio, 2026</strong></span>
+    </div>
+    <div class="hero-cta fi d3">
+      <a class="btn btn-primary" href="#alcance">Ver el alcance <span class="arrow">→</span></a>
+      <a class="btn btn-ghost" href="#inversion">Inversión <span class="arrow">→</span></a>
+    </div>
+
+    <!-- KPI GRID -->
+    <div class="kpi-grid fi d4">
+      <div class="kpi">
+        <div class="tag">— Oportunidad global</div>
+        <div>
+          <div class="num">1.500<span class="unit">M</span></div>
+          <div class="label">Personas viven con algún grado de pérdida auditiva en el mundo. <em>OMS, 2024</em></div>
+        </div>
+      </div>
+      <div class="kpi">
+        <div class="tag">— Marco regulatorio</div>
+        <div>
+          <div class="num">2022</div>
+          <div class="label">Año en que la FDA aprobó la venta libre (OTC) de audífonos, sin receta médica previa. <em>FDA, oct. 2022</em></div>
+        </div>
+      </div>
+      <div class="kpi">
+        <div class="tag">— Adopción post-OTC</div>
+        <div>
+          <div class="num">+25<span class="unit">%</span></div>
+          <div class="label">Aumento en la adopción de audífonos en EE.UU. tras habilitarse la venta libre. <em>Hearing Review, 2023</em></div>
+        </div>
+      </div>
+      <div class="kpi">
+        <div class="tag">— Crecimiento del mercado</div>
+        <div>
+          <div class="num">8.1<span class="unit">%</span></div>
+          <div class="label">Crecimiento anual proyectado del mercado OTC a nivel global (CAGR 2025–2034). <em>GM Insights, 2025</em></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ALCANCE ────────────────────────────────────────────────── -->
+<section id="alcance">
+  <div class="wrap">
+    <div class="eyebrow fi">— Alcance del proyecto</div>
+    <h2 class="sec-title fi d1">Todo lo que construimos para el lanzamiento de SONA en Ecuador.</h2>
+    <p class="sec-sub fi d2">Una sola tienda digital que hace tres trabajos a la vez: genera confianza clínica, vende sin fricción y convierte cada visita en un lead calificado — con 2 productos de lanzamiento, lista para escalar cuando sumen más.</p>
+
+    <div class="scope-grid fi d3">
+      <div class="scope-card">
+        <div class="scope-icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M4 12l5 5L20 6" stroke="#e8d5b0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <div class="scope-num mono">01</div>
+          <h3>Diseño de marca digital</h3>
+          <p>Identidad visual clara y de confianza clínica, construida desde cero para SONA. Sin plantillas.</p>
+        </div>
+      </div>
+      <div class="scope-card">
+        <div class="scope-icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="#e8d5b0" stroke-width="2"/><path d="M4 10h16" stroke="#e8d5b0" stroke-width="2"/></svg>
+        </div>
+        <div>
+          <div class="scope-num mono">02</div>
+          <h3>Catálogo de 2 productos</h3>
+          <p>Fichas de producto con especificaciones y comparativa — listas para escalar cuando sumen más modelos.</p>
+        </div>
+      </div>
+      <div class="scope-card">
+        <div class="scope-icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><circle cx="9" cy="20" r="1.4" fill="#e8d5b0"/><circle cx="17" cy="20" r="1.4" fill="#e8d5b0"/><path d="M3 4h2l2.2 11.2A2 2 0 0 0 9.16 17H17a2 2 0 0 0 1.94-1.51L20.5 9H6" stroke="#e8d5b0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <div class="scope-num mono">03</div>
+          <h3>Carrito y checkout</h3>
+          <p>Compra en línea completa: selección, carrito, checkout y confirmación, pensada para conversión.</p>
+        </div>
+      </div>
+      <div class="scope-card">
+        <div class="scope-icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z" stroke="#e8d5b0" stroke-width="2" stroke-linejoin="round"/><circle cx="7.5" cy="18" r="1.6" fill="#e8d5b0"/><circle cx="17.5" cy="18" r="1.6" fill="#e8d5b0"/></svg>
+        </div>
+        <div>
+          <div class="scope-num mono">04</div>
+          <h3>Delivery en Ecuador</h3>
+          <p>Zonas, tarifas y tiempos de entrega configurados a nivel nacional, integrados al checkout.</p>
+        </div>
+      </div>
+      <div class="scope-card">
+        <div class="scope-icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M3 12h3l2-7 4 14 2-9 2 5h5" stroke="#e8d5b0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <div class="scope-num mono">05</div>
+          <h3>Test de diagnóstico auditivo</h3>
+          <p>Herramienta interactiva con distintos tonos y frecuencias que orienta al usuario y recomienda un producto.</p>
+        </div>
+      </div>
+      <div class="scope-card">
+        <div class="scope-icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" stroke="#e8d5b0" stroke-width="2" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <div class="scope-num mono">06</div>
+          <h3>Leads automatizados (Zapier)</h3>
+          <p>Cada test o formulario se convierte en un lead capturado y enrutado automáticamente a tu correo o CRM.</p>
+        </div>
+      </div>
+      <div class="scope-card">
+        <div class="scope-icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M4 19V9M10 19V5M16 19v-7M20 19H4" stroke="#e8d5b0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <div class="scope-num mono">07</div>
+          <h3>Analytics + Microsoft Clarity</h3>
+          <p>Google Analytics para métricas de negocio y Clarity para mapas de calor y grabaciones de sesión reales.</p>
+        </div>
+      </div>
+      <div class="scope-card">
+        <div class="scope-icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><rect x="7" y="2" width="10" height="20" rx="2" stroke="#e8d5b0" stroke-width="2"/><path d="M11 18h2" stroke="#e8d5b0" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <div class="scope-num mono">08</div>
+          <h3>Responsive impecable</h3>
+          <p>Mobile-first, porque la mayoría de quienes buscan "audífonos Ecuador" lo hacen desde el celular.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TEST DE DIAGNÓSTICO ────────────────────────────────────── -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow fi">— La pieza central · Test auditivo</div>
+    <div class="chart-block fi d1">
+      <div>
+        <h2>Un test de 2 minutos que califica al cliente antes de que hable contigo.</h2>
+        <p>Antes de pedirle que compre, dejamos que se escuche a sí mismo. El visitante prueba distintos tonos en distintas frecuencias, recibe un resultado orientativo y ve la recomendación de producto — sin salir de la web.</p>
+        <div class="disclaimer">El test es una herramienta de orientación comercial, no un diagnóstico médico — así lo indicamos también dentro de la web, en línea con el uso previsto de los dispositivos OTC.</div>
+      </div>
+      <div class="test-steps">
+        <div class="test-step">
+          <div class="node mono">1</div>
+          <div><h4>Tonos</h4><p>El usuario escucha una serie de tonos en distintas frecuencias directamente desde el navegador.</p></div>
+        </div>
+        <div class="test-step">
+          <div class="node mono">2</div>
+          <div><h4>Respuestas</h4><p>Marca qué escucha y qué no. Sin cuentas, sin apps, sin fricción.</p></div>
+        </div>
+        <div class="test-step">
+          <div class="node mono">3</div>
+          <div><h4>Resultado</h4><p>Recibe una lectura orientativa de su nivel de audición en menos de 2 minutos.</p></div>
+        </div>
+        <div class="test-step">
+          <div class="node mono">4</div>
+          <div><h4>Recomendación + lead</h4><p>Ve el producto SONA sugerido — y ese resultado se convierte en un lead capturado vía Zapier.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ANALYTICS ──────────────────────────────────────────────── -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow fi">— Analytics · Datos y automatización</div>
+    <div class="analytics-shell">
+      <div class="analytics-copy fi d1">
+        <h2>Tu web no solo vende. También te dice quién compra, cómo y por qué no.</h2>
+        <p>Integramos Google Analytics 4 y Microsoft Clarity desde el día uno. Puedes ver visitas, resultados del test, carritos iniciados y grabaciones reales de cómo la gente navega — sin adivinar.</p>
+        <div class="analytics-list">
+          <div class="analytics-item">
+            <div class="analytics-icon">
+              <svg viewBox="0 0 56 56" width="26" height="26" fill="none"><rect x="11" y="28" width="7" height="14" rx="3.5" fill="#e8d5b0" opacity="0.55"/><rect x="24" y="20" width="7" height="22" rx="3.5" fill="#e8d5b0" opacity="0.75"/><rect x="37" y="13" width="7" height="29" rx="3.5" fill="#e8d5b0"/></svg>
+            </div>
+            <div>
+              <h3>Analytics 4 + eventos de negocio</h3>
+              <p>Visitas, fuente de tráfico, tests completados, productos más vistos y carritos iniciados, medidos desde el lanzamiento.</p>
+            </div>
+          </div>
+          <div class="analytics-item">
+            <div class="analytics-icon">
+              <svg viewBox="0 0 56 56" width="26" height="26" fill="none"><rect x="12" y="12" width="32" height="32" rx="8" stroke="#e8d5b0" stroke-width="3" opacity="0.85"/><circle cx="28" cy="28" r="7" fill="#ff6b35"/></svg>
+            </div>
+            <div>
+              <h3>Microsoft Clarity — mapas de calor</h3>
+              <p>Sesiones reales de usuarios navegando el test y el checkout, para detectar fricción y oportunidades.</p>
+            </div>
+          </div>
+          <div class="analytics-item">
+            <div class="analytics-icon">
+              <svg viewBox="0 0 56 56" width="26" height="26" fill="none"><path d="M28 10a18 18 0 1 1-12.7 5.27" stroke="#e8d5b0" stroke-width="5" stroke-linecap="round" opacity="0.28"/><path d="M28 10a18 18 0 0 1 15.58 26.99L28 28V10Z" fill="#e8d5b0"/></svg>
+            </div>
+            <div>
+              <h3>Leads enrutados por Zapier</h3>
+              <p>Cada resultado de test o formulario se dispara automáticamente hacia tu correo o CRM, sin revisión manual.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="analytics-preview fi d2">
+        <div class="analytics-svg-card">
+          <div class="mini-label">Visitas</div>
+          <svg viewBox="0 0 180 90" fill="none"><path d="M12 68H168" stroke="rgba(244,241,234,0.15)" stroke-width="2"/><path d="M18 60C36 58 44 28 65 31C86 34 90 54 108 53C126 52 134 18 162 21" stroke="#e8d5b0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="65" cy="31" r="4.5" fill="#ff6b35"/><circle cx="162" cy="21" r="4.5" fill="#e8d5b0"/></svg>
+          <div class="mini-note">Tráfico, sesiones y crecimiento comparado semana a semana.</div>
+        </div>
+        <div class="analytics-svg-card">
+          <div class="mini-label">Test completados</div>
+          <svg viewBox="0 0 180 90" fill="none"><rect x="18" y="58" width="26" height="18" rx="4" fill="rgba(232,213,176,0.22)"/><rect x="52" y="42" width="26" height="34" rx="4" fill="rgba(232,213,176,0.42)"/><rect x="86" y="28" width="26" height="48" rx="4" fill="#e8d5b0"/><rect x="120" y="14" width="26" height="62" rx="4" fill="#ff6b35"/></svg>
+          <div class="mini-note">Cuántos visitantes terminan el test y ven su recomendación.</div>
+        </div>
+        <div class="analytics-footer">
+          <strong>Incluido desde el lanzamiento</strong>
+          <span>Configuración de GA4, Clarity y automatización Zapier, listas para usarse desde el primer día.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TIMELINE ───────────────────────────────────────────────── -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow fi">— Proceso claro · 5 pasos + mantenimiento</div>
+    <h2 class="sec-title fi d1" style="margin-bottom:8px">Del diagnóstico al lanzamiento, sin fricción.</h2>
+    <p class="sec-sub fi d2" style="margin-bottom:8px">Trabajo yo personalmente, de principio a fin — no hay equipo de cuenta ni tercerización.</p>
+    <div class="timeline fi d3">
+      <div class="t-step"><span class="node">1</span><div class="when">Paso 1</div><div class="what">Descubrimiento</div><div class="desc">Entendemos catálogo, tono de marca y flujo de delivery que necesita SONA.</div></div>
+      <div class="t-step"><span class="node">2</span><div class="when">Paso 2</div><div class="what">Diseño</div><div class="desc">Sistema visual, arquitectura del test y estructura del carrito, antes de escribir código.</div></div>
+      <div class="t-step"><span class="node">3</span><div class="when">Paso 3</div><div class="what">Desarrollo</div><div class="desc">Web, carrito, test de tonos e integraciones: Zapier, Analytics y Clarity.</div></div>
+      <div class="t-step"><span class="node">4</span><div class="when">Paso 4</div><div class="what">Revisión contigo</div><div class="desc">Ajustamos juntos hasta que el flujo completo, de visita a compra, esté conforme.</div></div>
+      <div class="t-step"><span class="node">5</span><div class="when">Paso 5</div><div class="what">Lanzamiento</div><div class="desc">Publicamos la web, lista para vender y capturar leads desde el primer día.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── INVESTMENT ─────────────────────────────────────────────── -->
+<section id="inversion">
+  <div class="wrap">
+    <div class="eyebrow fi">— Inversión · Propuesta para SONA</div>
+    <h2 class="sec-title fi d1" style="margin-bottom:52px">Una tarifa de Family &amp; Friends, no de agencia.</h2>
+
+    <div class="inv-grid fi d2">
+      <div class="inv-card feat">
+        <div class="badge">Family &amp; Friends</div>
+        <div class="tag">— Web nueva desde cero · SONA</div>
+        <h3>Tienda digital completa, construida para vender y calificar leads.</h3>
+        <div class="price-old mono">$699 USD</div>
+        <div class="price">$499.99<span class="small">USD</span></div>
+        <div class="price-note">Tarifa Family &amp; Friends · pago único · diseño 100% original desde cero</div>
+        <ul>
+          <li><span class="what">Diseño de marca digital</span><span class="val">✓</span></li>
+          <li><span class="what">Catálogo de 2 productos</span><span class="val">✓</span></li>
+          <li><span class="what">Carrito de compras y checkout</span><span class="val">✓</span></li>
+          <li><span class="what">Delivery configurado para Ecuador</span><span class="val">✓</span></li>
+          <li><span class="what">Test de diagnóstico auditivo interactivo</span><span class="val">✓</span></li>
+          <li><span class="what">Leads automatizados vía Zapier</span><span class="val">✓</span></li>
+          <li><span class="what">Google Analytics 4 + Microsoft Clarity</span><span class="val">✓</span></li>
+          <li><span class="what">Responsive impecable (mobile-first)</span><span class="val">✓</span></li>
+        </ul>
+      </div>
+
+      <div class="inv-card">
+        <div class="tag">— Mantenimiento mensual</div>
+        <h3>Soporte, cambios y optimización continua.</h3>
+        <div class="price-old mono">$99 / mes</div>
+        <div class="price">$79.20<span class="small">/mes</span></div>
+        <div class="price-note">20% de descuento · recurrente y opcional · cancelas cuando quieras</div>
+        <ul>
+          <li><span class="what">Actualizaciones y cambios de contenido</span><span class="val">✓</span></li>
+          <li><span class="what">Soporte técnico directo conmigo</span><span class="val">✓</span></li>
+          <li><span class="what">Monitoreo de analytics y leads</span><span class="val">✓</span></li>
+          <li><span class="what">Optimización continua del test y checkout</span><span class="val">✓</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="inv-note fi d3">Forma de pago: 50% al inicio, 50% al lanzamiento. El mantenimiento se factura mensualmente y es completamente opcional.</p>
+
+    <!-- Final CTA strip -->
+    <div class="cta-strip fi d4">
+      <div class="eyebrow" style="margin-bottom:14px">— Empieza hoy mismo</div>
+      <h3>Ecuador va a escuchar mejor. Que lo compre en tu web.</h3>
+      <p>No soy una agencia. Trabajo cada proyecto personalmente — cuando tengas una duda, me escribes a mí.</p>
+      <div class="next-steps">
+        <span><strong>01</strong> Confirmas la propuesta</span>
+        <span><strong>02</strong> Coordinamos una llamada de 30 min</span>
+        <span><strong>03</strong> Iniciamos con el 50% de anticipo</span>
+      </div>
+      <div class="cta-buttons">
+        <a class="btn btn-primary" href="https://wa.me/593969349833?text=Hola%20Jose%2C%20quiero%20avanzar%20con%20la%20propuesta%20de%20SONA." target="_blank" rel="noopener">WhatsApp · 096 934 9833 <span class="arrow">→</span></a>
+        <a class="btn btn-ghost" href="mailto:thenextwebec@gmail.com?subject=Propuesta%20SONA">thenextwebec@gmail.com <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ────────────────────────────────────────────────── -->
+<footer>
+  <div class="sign">
+    <div class="brand-icon"></div>
+    <div>
+      <div class="brand-name">Next<span class="accent" style="color:var(--cream)">WebEC</span></div>
+      <div class="mono" style="font-size:10px;color:var(--muted);letter-spacing:0.1em;margin-top:2px">Diseño web &amp; experiencias digitales</div>
+    </div>
+  </div>
+  <div class="meta">
+    <span>WhatsApp · 096 934 9833</span>
+    <a href="mailto:thenextwebec@gmail.com">thenextwebec@gmail.com</a>
+    <a href="https://wa.me/593969349833" target="_blank" rel="noopener">Empezar hoy →</a>
+  </div>
+</footer>
+
+<!-- ─── WHATSAPP FLOAT ─────────────────────────────────────────── -->
+<a href="https://wa.me/593969349833?text=Hola%20Jose%2C%20tengo%20una%20pregunta%20sobre%20la%20propuesta%20de%20SONA."
+   target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.12h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.84-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.35c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.2-8.25 8.2Zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.4-.12-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.99-1.22-.73-.66-1.23-1.46-1.37-1.71-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.36-.77-1.86-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01a.92.92 0 0 0-.67.31c-.23.25-.87.85-.87 2.08 0 1.23.89 2.41 1.02 2.58.12.17 1.75 2.67 4.24 3.75.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29Z"/></svg>
+</a>
+
+<script>
+(function(){
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.10 });
+  document.querySelectorAll('.fi').forEach(function(el){ obs.observe(el); });
+})();
+</script>
+
+</body>
+</html>
