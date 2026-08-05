@@ -3,29 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>MAYSO × NextWebEC — Propuesta comercial 2026</title>
-<meta name="description" content="Propuesta comercial de NextWebEC para MAYSO: diseño y desarrollo de una web catálogo sin precios para presentar productos cárnicos, cobertura, planta, certificaciones y contacto por WhatsApp.">
-<meta name="theme-color" content="#171310">
+<title>MAYSO × NextWebEC | Propuesta comercial 2026</title>
+<meta name="description" content="Propuesta comercial de NextWebEC para MAYSO: sitio institucional moderno, catálogo sin precios públicos, contacto inmediato por WhatsApp, SEO básico, analítica y mantenimiento.">
+<meta name="theme-color" content="#16120f">
 <meta property="og:type" content="website">
-<meta property="og:title" content="MAYSO × NextWebEC — Propuesta comercial 2026">
-<meta property="og:description" content="Diseño y desarrollo de una web catálogo profesional para MAYSO.">
+<meta property="og:title" content="MAYSO × NextWebEC | Propuesta comercial 2026">
+<meta property="og:description" content="Diseño y desarrollo de una web profesional para presentar a MAYSO, mostrar su catálogo sin precios y convertir consultas por WhatsApp.">
 <meta property="og:locale" content="es_EC">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23171310'/%3E%3Cpath d='M27 68V32h10l13 18 13-18h10v36H62V49L50 65 38 49v19z' fill='%23d8b27c'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
+<!-- ============================================================
+  TODO ANTES DE ENVIAR / PUBLICAR (José / NextWebEC):
+  1. Confirmar el número de WhatsApp oficial de MAYSO.
+  2. Reemplazar los valores de inversión si ya están definidos.
+  3. Confirmar categorías iniciales del catálogo y datos de cobertura.
+============================================================= -->
+
 <style>
 :root{
-  --brown:#171310;
-  --brown-2:#211a16;
-  --brown-3:#2c211b;
-  --line:rgba(216,178,124,0.18);
-  --gold:#d8b27c;
-  --gold-2:#f0d4aa;
-  --ink:#f7f1e8;
-  --muted:rgba(247,241,232,0.62);
-  --red:#a94434;
+  --bg:#16120f;
+  --bg-2:#211a16;
+  --bg-3:#2b211b;
+  --line:rgba(230,201,164,0.18);
+  --cream:#e6c9a4;
+  --cream-2:#f4e6d3;
+  --ink:#faf6ef;
+  --muted:rgba(250,246,239,0.62);
+  --red:#ba4b34;
+  --green:#25D366;
   --ease:cubic-bezier(.22,1,.36,1);
 }
 *{box-sizing:border-box}
@@ -33,188 +40,237 @@ html,body{margin:0;padding:0}
 html{overflow-x:hidden;scroll-behavior:smooth}
 body{
   font-family:'Inter',system-ui,sans-serif;
-  background:var(--brown);
+  background:var(--bg);
   color:var(--ink);
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
   overflow-x:hidden;
   background-image:
-    radial-gradient(ellipse 80% 50% at 20% 0%, rgba(216,178,124,0.07) 0%, transparent 60%),
-    radial-gradient(ellipse 80% 60% at 80% 100%, rgba(169,68,52,0.07) 0%, transparent 60%);
+    radial-gradient(ellipse 80% 50% at 20% 0%, rgba(230,201,164,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 60% at 80% 100%, rgba(186,75,52,0.07) 0%, transparent 60%);
 }
 .wrap{max-width:1360px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
 .mono{font-family:'JetBrains Mono',monospace}
-img{max-width:100%;display:block}
-@media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important;scroll-behavior:auto !important}
 }
-.fi{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+
+/* Fade-in */
+.fi{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease), transform .7s var(--ease)}
 .fi.in{opacity:1;transform:translateY(0)}
-.d1{transition-delay:.06s}.d2{transition-delay:.12s}.d3{transition-delay:.18s}.d4{transition-delay:.24s}
+.d1{transition-delay:.06s}
+.d2{transition-delay:.12s}
+.d3{transition-delay:.18s}
+.d4{transition-delay:.24s}
+
+/* Top bar */
 .topbar{
   display:flex;align-items:center;justify-content:space-between;gap:16px;
   padding:28px clamp(20px,4vw,56px);
-  border-bottom:1px solid var(--line);flex-wrap:wrap;
+  border-bottom:1px solid var(--line);
+  flex-wrap:wrap;
   position:sticky;top:0;z-index:50;
-  background:rgba(23,19,16,.88);backdrop-filter:blur(14px);
+  background:rgba(22,18,15,0.88);backdrop-filter:blur(14px);
 }
 .brand{display:flex;align-items:center;gap:14px}
-.brand-icon{
-  width:30px;height:40px;border-radius:8px;
-  background:linear-gradient(180deg,#e6c694 0%,#b98951 100%);
-  box-shadow:inset 0 -6px 12px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.18);
-  flex-shrink:0;position:relative;
-}
-.brand-icon::after{
-  content:"M";position:absolute;inset:0;display:grid;place-items:center;
-  color:var(--brown);font-weight:900;font-size:17px;
-}
-.brand-name{font-weight:800;font-size:21px;letter-spacing:-.02em;white-space:nowrap}
-.brand-name .accent{color:var(--gold)}
+.brand-name{font-weight:800;font-size:21px;letter-spacing:-0.02em;white-space:nowrap}
+.brand-name .accent{color:var(--cream)}
 .client-pill{
-  display:inline-flex;align-items:center;gap:10px;padding:9px 16px;border-radius:999px;
-  border:1px solid var(--line);font-size:12px;font-weight:600;letter-spacing:.04em;
+  display:inline-flex;align-items:center;gap:10px;
+  padding:9px 16px;border-radius:999px;
+  border:1px solid var(--line);
+  font-size:12px;font-weight:600;letter-spacing:0.04em;
   text-decoration:none;color:inherit;
 }
-.client-pill .dot{width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 0 4px rgba(169,68,52,.15)}
-.client-pill .label{color:var(--muted);font-weight:500;text-transform:uppercase;letter-spacing:.1em;font-size:10px}
-.client-pill strong{color:var(--gold);font-weight:700}
+.client-pill .dot{width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 0 4px rgba(186,75,52,0.15);flex-shrink:0}
+.client-pill .label{color:var(--muted);font-weight:500;text-transform:uppercase;letter-spacing:0.1em;font-size:10px}
+.client-pill strong{color:var(--cream);font-weight:700}
+
+/* Section spacing */
 section{padding:clamp(64px,8vw,96px) 0}
 .eyebrow{
-  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--gold);opacity:.9;display:inline-flex;align-items:center;gap:10px;margin-bottom:22px;
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--cream);opacity:0.88;
+  display:inline-flex;align-items:center;gap:10px;
+  margin-bottom:22px;
 }
-.eyebrow::before{content:"";width:24px;height:1px;background:var(--gold);opacity:.65}
+.eyebrow::before{content:"";width:24px;height:1px;background:var(--cream);opacity:0.6}
+
+/* Hero */
 .hero{padding-top:clamp(56px,7vw,88px)}
 .hero h1{
-  font-weight:900;font-size:clamp(34px,5.4vw,78px);letter-spacing:-.035em;line-height:1.04;
-  margin:0 0 26px;max-width:19ch;
+  font-weight:900;font-size:clamp(34px,5.4vw,78px);
+  letter-spacing:-0.035em;line-height:1.04;
+  margin:0 0 26px;max-width:20ch;
 }
-.hero h1 .em{color:var(--gold)}
+.hero h1 .em{color:var(--cream)}
 .hero .lede{
-  font-size:clamp(15px,1.6vw,18px);line-height:1.6;max-width:65ch;
+  font-size:clamp(15px,1.6vw,18px);line-height:1.6;max-width:66ch;
   color:var(--muted);margin:0 0 40px;font-weight:500;
 }
-.hero-meta{display:flex;flex-wrap:wrap;gap:10px 28px;margin:0 0 40px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;color:var(--muted)}
-.hero-meta strong{color:var(--gold);font-weight:600}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px 28px;margin:0 0 40px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;color:var(--muted)}
+.hero-meta strong{color:var(--cream);font-weight:600}
 .hero-cta{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
 .btn{
-  display:inline-flex;align-items:center;gap:12px;padding:16px 24px;border-radius:6px;
-  font-family:'Inter';font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
-  border:1px solid transparent;cursor:pointer;text-decoration:none;
-  transition:transform .2s var(--ease),box-shadow .2s var(--ease),background .2s var(--ease);min-height:44px;
+  display:inline-flex;align-items:center;gap:12px;
+  padding:16px 24px;border-radius:6px;
+  font-family:'Inter';font-size:12px;font-weight:700;
+  letter-spacing:0.1em;text-transform:uppercase;
+  border:1px solid transparent;cursor:pointer;
+  text-decoration:none;transition:transform .2s var(--ease),box-shadow .2s var(--ease),background .2s var(--ease);
+  min-height:44px;
 }
-.btn:hover{transform:translateY(-2px)}.btn:active{transform:translateY(0) scale(.98)}
-.btn-primary{background:var(--gold);color:var(--brown)}
-.btn-primary:hover{box-shadow:0 12px 28px -10px rgba(216,178,124,.5)}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn-primary{background:var(--cream);color:var(--bg)}
+.btn-primary:hover{box-shadow:0 12px 28px -10px rgba(230,201,164,0.5)}
 .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn-whatsapp{background:var(--green);color:#06150b}
 .btn .arrow{font-size:16px}
+
+/* KPI grid */
 .kpi-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
-  border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:56px;
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  margin-top:56px;
 }
-.kpi{background:var(--brown-2);padding:32px 28px;display:flex;flex-direction:column;justify-content:space-between;min-height:196px}
-.kpi .num{font-weight:900;font-size:34px;line-height:1;letter-spacing:-.03em;color:var(--gold)}
-.kpi .label{font-size:12.5px;color:var(--muted);font-weight:500;line-height:1.45;margin-top:16px;max-width:24ch}
-.kpi .label em{font-style:normal;color:var(--gold);opacity:.85}
-.kpi .tag{font-size:10px;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin-bottom:auto}
-.sec-title{font-weight:900;font-size:clamp(28px,4vw,46px);letter-spacing:-.03em;line-height:1.08;margin:0 0 16px;max-width:24ch}
+.kpi{
+  background:var(--bg-2);padding:32px 28px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  min-height:196px;
+}
+.kpi .num{font-weight:900;font-size:38px;line-height:1;letter-spacing:-0.03em;color:var(--cream);font-variant-numeric:tabular-nums}
+.kpi .num .unit{font-size:22px;opacity:0.85;margin-left:2px}
+.kpi .label{font-size:12.5px;color:var(--muted);font-weight:500;line-height:1.45;margin-top:16px;max-width:25ch}
+.kpi .label em{font-style:normal;color:var(--cream);opacity:0.8}
+.kpi .tag{font-size:10px;color:var(--cream);letter-spacing:0.14em;text-transform:uppercase;font-weight:600;margin-bottom:auto}
+
+/* Reusable titles */
+.sec-title{font-weight:900;font-size:clamp(28px,4vw,46px);letter-spacing:-0.03em;line-height:1.08;margin:0 0 16px;max-width:25ch}
 .sec-sub{font-size:15.5px;color:var(--muted);max-width:64ch;margin:0 0 52px;line-height:1.6}
+
+/* Scope grid */
 .scope-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
-.scope-card{background:var(--brown-2);padding:30px 26px;display:flex;flex-direction:column;gap:16px;transition:background .3s var(--ease)}
-.scope-card:hover{background:var(--brown-3)}
-.scope-num{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold);letter-spacing:.14em}
-.scope-icon{width:44px;height:44px;border-radius:12px;background:rgba(216,178,124,.08);border:1px solid rgba(216,178,124,.16);display:flex;align-items:center;justify-content:center}
-.scope-card h3{font-size:15.5px;font-weight:800;letter-spacing:-.01em;margin:0;line-height:1.25}
+.scope-card{background:var(--bg-2);padding:30px 26px;display:flex;flex-direction:column;gap:16px;transition:background .3s var(--ease)}
+.scope-card:hover{background:var(--bg-3)}
+.scope-num{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--cream);letter-spacing:0.14em}
+.scope-icon{width:44px;height:44px;border-radius:12px;background:rgba(230,201,164,0.08);border:1px solid rgba(230,201,164,0.16);display:flex;align-items:center;justify-content:center}
+.scope-card h3{font-size:15.5px;font-weight:800;letter-spacing:-0.01em;margin:0;line-height:1.25}
 .scope-card p{font-size:12.8px;color:var(--muted);line-height:1.55;margin:0}
-.feature-block{
+
+/* Catalog block */
+.chart-block{
   display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(28px,5vw,80px);align-items:center;
-  background:var(--brown-2);border:1px solid var(--line);border-radius:18px;padding:clamp(28px,5vw,64px);
+  background:var(--bg-2);border:1px solid var(--line);border-radius:18px;
+  padding:clamp(28px,5vw,64px);
 }
-.feature-block h2{font-weight:900;font-size:clamp(24px,3vw,38px);letter-spacing:-.03em;line-height:1.1;margin:0 0 18px}
-.feature-block p{color:var(--muted);font-size:14.5px;line-height:1.6;margin:0 0 20px}
-.highlight{font-size:12px;color:var(--muted);line-height:1.55;padding:14px 16px;border-left:2px solid var(--red);background:rgba(169,68,52,.08);border-radius:4px}
-.steps{display:flex;flex-direction:column;gap:0}
-.step{display:grid;grid-template-columns:36px 1fr;gap:16px;padding:18px 0;border-top:1px solid var(--line)}
-.step:first-child{border-top:0;padding-top:0}
-.step .node{width:32px;height:32px;border-radius:50%;background:var(--gold);color:var(--brown);font-family:'JetBrains Mono',monospace;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
-.step h4{margin:0 0 5px;font-size:14.5px;font-weight:700}
-.step p{margin:0;font-size:12.8px;color:var(--muted);line-height:1.5}
-.analytics-shell{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.9fr);gap:24px;align-items:stretch}
-.analytics-copy,.analytics-preview{background:var(--brown-2);border:1px solid var(--line);border-radius:18px}
+.chart-block h2{font-weight:900;font-size:clamp(24px,3vw,38px);letter-spacing:-0.03em;line-height:1.1;margin:0 0 18px}
+.chart-block p{color:var(--muted);font-size:14.5px;line-height:1.6;margin:0 0 20px}
+.disclaimer{font-size:12px;color:var(--muted);line-height:1.55;padding:14px 16px;border-left:2px solid var(--red);background:rgba(186,75,52,0.08);border-radius:4px}
+.catalog-steps{display:flex;flex-direction:column;gap:0}
+.catalog-step{display:grid;grid-template-columns:36px 1fr;gap:16px;padding:18px 0;border-top:1px solid var(--line)}
+.catalog-step:first-child{border-top:0;padding-top:0}
+.catalog-step .node{width:32px;height:32px;border-radius:50%;background:var(--cream);color:var(--bg);font-family:'JetBrains Mono',monospace;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.catalog-step h4{margin:0 0 5px;font-size:14.5px;font-weight:700;letter-spacing:-0.005em}
+.catalog-step p{margin:0;font-size:12.8px;color:var(--muted);line-height:1.5}
+
+/* Conversion section */
+.analytics-shell{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,0.9fr);gap:24px;align-items:stretch}
+.analytics-copy,.analytics-preview{background:var(--bg-2);border:1px solid var(--line);border-radius:18px}
 .analytics-copy{padding:clamp(28px,4vw,48px)}
-.analytics-copy h2{font-weight:900;font-size:clamp(24px,3vw,38px);letter-spacing:-.03em;line-height:1.1;margin:0 0 16px;max-width:17ch}
-.analytics-copy>p{color:var(--muted);font-size:14.5px;line-height:1.6;margin:0 0 28px;max-width:58ch}
+.analytics-copy h2{font-weight:900;font-size:clamp(24px,3vw,38px);letter-spacing:-0.03em;line-height:1.1;margin:0 0 16px;max-width:17ch}
+.analytics-copy p{color:var(--muted);font-size:14.5px;line-height:1.6;margin:0 0 28px;max-width:58ch}
 .analytics-list{display:grid;gap:16px}
 .analytics-item{display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:start;padding:16px 0;border-top:1px solid var(--line)}
 .analytics-item:first-child{padding-top:0;border-top:0}
-.analytics-icon{width:52px;height:52px;border-radius:13px;background:rgba(216,178,124,.08);border:1px solid rgba(216,178,124,.16);display:flex;align-items:center;justify-content:center}
-.analytics-item h3{font-size:15.5px;line-height:1.25;margin:0 0 5px;font-weight:800}
-.analytics-item p{margin:0;color:var(--muted);font-size:12.8px;line-height:1.5}
+.analytics-icon{width:52px;height:52px;border-radius:13px;background:rgba(230,201,164,0.08);border:1px solid rgba(230,201,164,0.16);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.analytics-item h3{font-size:15.5px;line-height:1.25;letter-spacing:-0.005em;margin:0 0 5px;font-weight:800}
+.analytics-item p{margin:0;color:var(--muted);font-size:12.8px;line-height:1.5;max-width:none}
 .analytics-preview{padding:22px;display:grid;gap:16px;align-content:start}
-.analytics-svg-card{background:var(--brown-3);border:1px solid var(--line);border-radius:14px;padding:18px}
-.analytics-svg-card .mini-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.analytics-svg-card{background:var(--bg-3);border:1px solid var(--line);border-radius:14px;padding:18px}
+.analytics-svg-card .mini-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--cream);margin-bottom:12px}
 .analytics-svg-card svg{width:100%;height:88px;display:block}
 .analytics-svg-card .mini-note{font-size:11.5px;line-height:1.45;color:var(--muted);margin-top:10px}
-.analytics-footer{padding:18px 20px;border-radius:14px;background:rgba(216,178,124,.05);border:1px solid rgba(216,178,124,.14)}
-.analytics-footer strong{display:block;font-size:13.5px;margin-bottom:5px}
+.analytics-footer{padding:18px 20px;border-radius:14px;background:rgba(230,201,164,0.05);border:1px solid rgba(230,201,164,0.14)}
+.analytics-footer strong{display:block;font-size:13.5px;letter-spacing:-0.005em;margin-bottom:5px}
 .analytics-footer span{color:var(--muted);font-size:12px;line-height:1.5}
+
+/* Timeline */
 .timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:44px;position:relative}
-.timeline::before{content:"";position:absolute;top:16px;left:3%;right:3%;height:1px;background:linear-gradient(90deg,transparent 0%,var(--gold) 8%,var(--gold) 92%,transparent 100%);opacity:.35}
+.timeline::before{content:"";position:absolute;top:16px;left:3%;right:3%;height:1px;background:linear-gradient(90deg,transparent 0%,var(--cream) 8%,var(--cream) 92%,transparent 100%);opacity:0.35}
 .t-step{position:relative;padding-top:44px;text-align:left;padding-right:20px}
-.t-step .node{position:absolute;top:6px;left:0;width:20px;height:20px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:var(--brown);font-family:'JetBrains Mono',monospace;box-shadow:0 0 0 5px var(--brown),0 0 0 6px var(--gold)}
-.t-step .when{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px;font-weight:600}
-.t-step .what{font-weight:700;font-size:14.5px;line-height:1.25;margin-bottom:6px}
+.t-step .node{position:absolute;top:6px;left:0;width:20px;height:20px;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:var(--bg);font-family:'JetBrains Mono',monospace;box-shadow:0 0 0 5px var(--bg),0 0 0 6px var(--cream)}
+.t-step .when{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--cream);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:8px;font-weight:600}
+.t-step .what{font-weight:700;font-size:14.5px;line-height:1.25;margin-bottom:6px;letter-spacing:-0.01em}
 .t-step .desc{font-size:12px;color:var(--muted);line-height:1.5}
+
+/* Investment */
 .inv-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:20px}
-.inv-card{background:var(--brown-2);border:1px solid var(--line);border-radius:18px;padding:clamp(28px,4vw,40px) clamp(24px,3vw,36px);display:flex;flex-direction:column;position:relative}
-.inv-card .tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:22px}
-.inv-card h3{font-weight:900;font-size:clamp(20px,2.2vw,26px);letter-spacing:-.02em;margin:0 0 20px;line-height:1.2}
-.inv-card .price{font-weight:900;font-size:clamp(38px,4.5vw,52px);letter-spacing:-.03em;color:var(--gold);line-height:1;margin:6px 0 8px}
-.inv-card .price .small{font-size:15px;opacity:.7;font-weight:700;margin-left:4px}
+.inv-card{background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:clamp(28px,4vw,40px) clamp(24px,3vw,36px);display:flex;flex-direction:column;position:relative}
+.inv-card .tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--cream);font-weight:600;margin-bottom:22px}
+.inv-card h3{font-weight:900;font-size:clamp(20px,2.2vw,26px);letter-spacing:-0.02em;margin:0 0 20px;line-height:1.2}
+.price-old{font-size:17px;color:var(--muted);text-decoration:line-through;font-weight:700;font-variant-numeric:tabular-nums}
+.inv-card .price{font-weight:900;font-size:clamp(36px,4.2vw,50px);letter-spacing:-0.03em;color:var(--cream);font-variant-numeric:tabular-nums;line-height:1;margin:6px 0 8px}
+.inv-card .price .small{font-size:15px;opacity:0.7;font-weight:700;margin-left:4px}
 .inv-card .price-note{font-size:12px;color:var(--muted);margin-bottom:28px;font-weight:500}
-.inv-card ul{list-style:none;padding:22px 0 0;margin:0;display:flex;flex-direction:column;gap:13px;border-top:1px solid var(--line)}
+.inv-card ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:13px;border-top:1px solid var(--line);padding-top:22px}
 .inv-card li{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;gap:16px}
 .inv-card li .what{color:var(--ink);font-weight:500}
-.inv-card li .val{font-family:'JetBrains Mono',monospace;color:var(--gold);font-weight:600;font-size:12px;white-space:nowrap}
-.inv-card.feat{background:linear-gradient(160deg,#2c211b 0%,#171310 100%);border-color:rgba(216,178,124,.5);box-shadow:0 30px 60px -30px rgba(216,178,124,.15)}
-.inv-card .badge{position:absolute;top:-12px;left:32px;background:var(--red);color:#fff;font-size:10px;font-weight:800;letter-spacing:.14em;padding:6px 12px;border-radius:999px;text-transform:uppercase}
+.inv-card li .val{font-family:'JetBrains Mono',monospace;color:var(--cream);font-weight:600;font-size:12px;white-space:nowrap}
+.inv-card.feat{background:linear-gradient(160deg,#2b211b 0%,#16120f 100%);border-color:rgba(230,201,164,0.5);box-shadow:0 30px 60px -30px rgba(230,201,164,0.16)}
+.inv-card .badge{position:absolute;top:-12px;left:32px;background:var(--red);color:var(--ink);font-size:10px;font-weight:800;letter-spacing:0.14em;padding:6px 12px;border-radius:999px;text-transform:uppercase}
 .inv-note{margin-top:22px;font-size:12.5px;color:var(--muted);text-align:center}
-.cta-strip{margin-top:56px;text-align:center;padding:clamp(32px,5vw,48px);border:1px solid var(--line);border-radius:18px;background:linear-gradient(160deg,#211a16 0%,#171310 100%)}
-.cta-strip h3{font-weight:900;font-size:clamp(24px,3.4vw,36px);letter-spacing:-.025em;margin:0 0 12px;line-height:1.15}
-.cta-strip p{color:var(--muted);font-size:14.5px;max-width:58ch;margin:0 auto 24px;line-height:1.6}
-.next-steps{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:28px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);letter-spacing:.04em}
-.next-steps strong{color:var(--gold)}
+
+/* Final CTA */
+.cta-strip{margin-top:56px;text-align:center;padding:clamp(32px,5vw,48px);border:1px solid var(--line);border-radius:18px;background:linear-gradient(160deg,#2b211b 0%,#16120f 100%)}
+.cta-strip h3{font-weight:900;font-size:clamp(24px,3.4vw,36px);letter-spacing:-0.025em;margin:0 0 12px;line-height:1.15}
+.cta-strip p{color:var(--muted);font-size:14.5px;max-width:56ch;margin:0 auto 24px;line-height:1.6}
+.next-steps{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:28px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);letter-spacing:0.04em}
+.next-steps strong{color:var(--cream)}
 .cta-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* Footer */
 footer{border-top:1px solid var(--line);padding:44px clamp(20px,4vw,56px);margin-top:8px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:22px}
 footer .sign{display:flex;align-items:center;gap:14px}
-footer .sign .brand-icon{width:22px;height:32px}
 footer .sign .brand-name{font-size:17px}
-footer .meta{display:flex;gap:26px;flex-wrap:wrap;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
-footer .meta a{color:var(--gold);text-decoration:none;font-weight:600}
+footer .meta{display:flex;gap:26px;flex-wrap:wrap;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.1em;color:var(--muted);text-transform:uppercase}
+footer .meta a{color:var(--cream);text-decoration:none;font-weight:600}
+
+/* WhatsApp float */
 .wa-float{position:fixed;bottom:24px;right:24px;width:58px;height:58px;border-radius:50%;background:#25D366;box-shadow:0 4px 24px rgba(37,211,102,.42);display:flex;align-items:center;justify-content:center;z-index:60;text-decoration:none;transition:transform .24s,box-shadow .24s}
 .wa-float:hover{transform:scale(1.08)}
 .wa-float::before{content:'';position:absolute;inset:0;border-radius:50%;background:#25D366;animation:wa-ring 2.5s ease-out infinite;z-index:-1}
 @keyframes wa-ring{0%{transform:scale(1);opacity:.55}100%{transform:scale(1.9);opacity:0}}
 .wa-float svg{width:28px;height:28px}
-@media(max-width:980px){
+
+/* Responsive */
+@media (max-width:980px){
   .kpi-grid{grid-template-columns:repeat(2,1fr)}
   .scope-grid{grid-template-columns:repeat(2,1fr)}
-  .feature-block{grid-template-columns:1fr}
+  .chart-block{grid-template-columns:1fr}
   .analytics-shell{grid-template-columns:1fr}
   .timeline{grid-template-columns:repeat(3,1fr);row-gap:36px}
   .inv-grid{grid-template-columns:1fr}
 }
-@media(max-width:640px){
-  .topbar{padding:20px}.brand-name{font-size:18px}.client-pill .label{display:none}
-  .kpi-grid,.scope-grid{grid-template-columns:1fr}
-  .timeline{grid-template-columns:1fr;row-gap:28px}.timeline::before{display:none}
+@media (max-width:640px){
+  .topbar{padding:20px 20px}
+  .brand-name{font-size:18px}
+  .client-pill .label{display:none}
+  .kpi-grid{grid-template-columns:1fr}
+  .scope-grid{grid-template-columns:1fr}
+  .timeline{grid-template-columns:1fr;row-gap:28px}
+  .timeline::before{display:none}
   .t-step{padding-right:0}
   .hero-cta .btn,.cta-buttons .btn{width:100%;justify-content:center}
   .hero-cta,.cta-buttons{flex-direction:column;align-items:stretch}
   footer{flex-direction:column;align-items:flex-start}
   .wa-float{bottom:18px;right:18px;width:52px;height:52px}
+  .wa-float svg{width:25px;height:25px}
 }
+
 @media print{
   body{background:white;color:black}
   section{padding:32px 0;page-break-inside:avoid}
@@ -226,7 +282,6 @@ footer .meta a{color:var(--gold);text-decoration:none;font-weight:600}
 
 <div class="topbar">
   <div class="brand">
-    <div class="brand-icon"></div>
     <div class="brand-name">Next<span class="accent">WebEC</span></div>
   </div>
   <a class="client-pill" href="#inversion">
@@ -239,11 +294,11 @@ footer .meta a{color:var(--gold);text-decoration:none;font-weight:600}
 <section class="hero">
   <div class="wrap">
     <div class="eyebrow fi">Propuesta comercial · MAYSO · 2026</div>
-    <h1 class="fi d1">Una web que convierte el catálogo de MAYSO en una <span class="em">herramienta de ventas</span>.</h1>
-    <p class="lede fi d2">NextWebEC diseñará y desarrollará una web catálogo moderna para presentar los productos cárnicos de MAYSO, explicar su cobertura nacional, mostrar su planta y fortalecer la confianza de hoteles, restaurantes, bares, delis y comercios. Sin carrito y sin precios públicos: cada producto llevará al cliente directamente a consultar por WhatsApp.</p>
+    <h1 class="fi d1">MAYSO necesita una web que presente confianza y genere <span class="em">consultas inmediatas</span>.</h1>
+    <p class="lede fi d2">NextWebEC diseña y construye una web institucional moderna para MAYSO: una presentación profesional de quiénes son, un catálogo sin precios públicos y llamados directos a WhatsApp para que los clientes puedan consultar productos, disponibilidad y condiciones de compra sin fricción.</p>
     <div class="hero-meta fi d2">
       <span>Preparado para: <strong>MAYSO</strong></span>
-      <span>Por: <strong>NextWebEC — José Guerrero</strong></span>
+      <span>Por: <strong>NextWebEC | José Guerrero</strong></span>
       <span>Fecha: <strong>5 de agosto, 2026</strong></span>
     </div>
     <div class="hero-cta fi d3">
@@ -253,31 +308,31 @@ footer .meta a{color:var(--gold);text-decoration:none;font-weight:600}
 
     <div class="kpi-grid fi d4">
       <div class="kpi">
-        <div class="tag">— Objetivo principal</div>
+        <div class="tag">Objetivo principal</div>
         <div>
-          <div class="num">Catálogo</div>
-          <div class="label">Una vitrina digital clara y profesional para presentar cortes, categorías, orígenes y disponibilidad.</div>
+          <div class="num">Web</div>
+          <div class="label">Presentar a MAYSO de forma profesional, clara y moderna ante clientes nuevos.</div>
         </div>
       </div>
       <div class="kpi">
-        <div class="tag">— Conversión</div>
+        <div class="tag">Catálogo</div>
         <div>
-          <div class="num">WhatsApp</div>
-          <div class="label">Cada sección y producto podrá dirigir al visitante a una conversación comercial inmediata.</div>
+          <div class="num">0<span class="unit">$</span></div>
+          <div class="label">Productos visibles sin precios públicos, para cotizar según volumen, stock y cliente.</div>
         </div>
       </div>
       <div class="kpi">
-        <div class="tag">— Cobertura</div>
+        <div class="tag">Conversión</div>
         <div>
-          <div class="num">Ecuador</div>
-          <div class="label">La web explicará claramente las entregas directas y los envíos a otras ciudades del país.</div>
+          <div class="num">WA</div>
+          <div class="label">WhatsApp como canal principal para consultar, cotizar y cerrar la venta.</div>
         </div>
       </div>
       <div class="kpi">
-        <div class="tag">— Posicionamiento</div>
+        <div class="tag">Audiencia</div>
         <div>
           <div class="num">B2B</div>
-          <div class="label">Una presencia digital diseñada para hoteles, restaurantes, bares, delis y comercios.</div>
+          <div class="label">Pensada para restaurantes, hoteles, comercios, distribuidores y compradores profesionales.</div>
         </div>
       </div>
     </div>
@@ -286,65 +341,90 @@ footer .meta a{color:var(--gold);text-decoration:none;font-weight:600}
 
 <section id="alcance">
   <div class="wrap">
-    <div class="eyebrow fi">— Alcance del proyecto</div>
-    <h2 class="sec-title fi d1">Todo lo necesario para presentar MAYSO como un proveedor nacional serio y confiable.</h2>
-    <p class="sec-sub fi d2">La web no será una tienda online. Será un catálogo comercial sin precios, optimizado para mostrar productos, explicar el servicio y generar consultas directas.</p>
+    <div class="eyebrow fi">Alcance del proyecto</div>
+    <h2 class="sec-title fi d1">Todo lo necesario para que MAYSO se vea seria, actual y fácil de contactar.</h2>
+    <p class="sec-sub fi d2">La propuesta no plantea una tienda con pagos en línea. Plantea una vitrina comercial estratégica: explica quién es MAYSO, organiza sus productos y lleva al cliente a WhatsApp en el momento correcto.</p>
 
     <div class="scope-grid fi d3">
       <div class="scope-card">
         <div class="scope-icon">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M4 12l5 5L20 6" stroke="#d8b27c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M4 12l5 5L20 6" stroke="#e6c9a4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <div><div class="scope-num">01</div><h3>Diseño web personalizado</h3><p>Una identidad visual premium, limpia y coherente con una marca de productos cárnicos importados.</p></div>
+        <div>
+          <div class="scope-num mono">01</div>
+          <h3>Diseño institucional moderno</h3>
+          <p>Una presencia visual sobria, profesional y alineada con el sector de alimentos y abastecimiento.</p>
+        </div>
       </div>
-
       <div class="scope-card">
         <div class="scope-icon">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="#d8b27c" stroke-width="2"/><path d="M4 10h16" stroke="#d8b27c" stroke-width="2"/></svg>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="#e6c9a4" stroke-width="2"/><path d="M4 10h16" stroke="#e6c9a4" stroke-width="2"/></svg>
         </div>
-        <div><div class="scope-num">02</div><h3>Catálogo sin precios</h3><p>Productos organizados por categoría, corte, origen o presentación, sin mostrar valores públicamente.</p></div>
+        <div>
+          <div class="scope-num mono">02</div>
+          <h3>Home de alto impacto</h3>
+          <p>Portada clara para comunicar qué hace MAYSO, a quién atiende y cómo iniciar una consulta.</p>
+        </div>
       </div>
-
       <div class="scope-card">
         <div class="scope-icon">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M6 4h12v16H6zM9 8h6M9 12h6M9 16h4" stroke="#d8b27c" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M4 5h16M4 12h16M4 19h16" stroke="#e6c9a4" stroke-width="2" stroke-linecap="round"/></svg>
         </div>
-        <div><div class="scope-num">03</div><h3>Fichas de producto</h3><p>Nombre, fotografía, origen, presentación, descripción y botón para consultar disponibilidad por WhatsApp.</p></div>
+        <div>
+          <div class="scope-num mono">03</div>
+          <h3>Catálogo sin precios</h3>
+          <p>Productos por categoría, corte, presentación, origen o disponibilidad, sin publicar valores al público.</p>
+        </div>
       </div>
-
       <div class="scope-card">
         <div class="scope-icon">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z" stroke="#d8b27c" stroke-width="2" stroke-linejoin="round"/><circle cx="7.5" cy="18" r="1.6" fill="#d8b27c"/><circle cx="17.5" cy="18" r="1.6" fill="#d8b27c"/></svg>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M8 10h8M8 14h5M5 4h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-8l-5 3v-3H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="#e6c9a4" stroke-width="2" stroke-linejoin="round"/></svg>
         </div>
-        <div><div class="scope-num">04</div><h3>Cobertura y entregas</h3><p>Explicación visual de entregas en Quito, Guayaquil, Manta y envíos a otras ciudades.</p></div>
+        <div>
+          <div class="scope-num mono">04</div>
+          <h3>WhatsApp en cada ficha</h3>
+          <p>Cada producto puede abrir una conversación con mensaje precargado para cotizar más rápido.</p>
+        </div>
       </div>
-
       <div class="scope-card">
         <div class="scope-icon">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M5 3h14v18H5zM8 7h8M8 11h8M8 15h5" stroke="#d8b27c" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4Z" stroke="#e6c9a4" stroke-width="2" stroke-linejoin="round"/></svg>
         </div>
-        <div><div class="scope-num">05</div><h3>Planta y proceso</h3><p>Sección para mostrar recepción, almacenamiento, corte, empaque, despacho y cadena de frío.</p></div>
+        <div>
+          <div class="scope-num mono">05</div>
+          <h3>Confianza y respaldo</h3>
+          <p>Secciones para hablar de manejo, cobertura, atención, experiencia y razones para elegir a MAYSO.</p>
+        </div>
       </div>
-
       <div class="scope-card">
         <div class="scope-icon">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M12 3l7 3v5c0 4.4-2.8 8.2-7 10-4.2-1.8-7-5.6-7-10V6z" stroke="#d8b27c" stroke-width="2"/><path d="M9 12l2 2 4-5" stroke="#d8b27c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z" stroke="#e6c9a4" stroke-width="2" stroke-linejoin="round"/><circle cx="7.5" cy="18" r="1.6" fill="#e6c9a4"/><circle cx="17.5" cy="18" r="1.6" fill="#e6c9a4"/></svg>
         </div>
-        <div><div class="scope-num">06</div><h3>Registros y certificaciones</h3><p>Espacio para RUC, AGROCALIDAD, ARCSA, registro de importador y otras certificaciones.</p></div>
+        <div>
+          <div class="scope-num mono">06</div>
+          <h3>Cobertura y entregas</h3>
+          <p>Información organizada sobre ciudades, zonas, coordinación de pedidos y tiempos de respuesta.</p>
+        </div>
       </div>
-
       <div class="scope-card">
         <div class="scope-icon">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M4 19V9M10 19V5M16 19v-7M20 19H4" stroke="#d8b27c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M4 19V9M10 19V5M16 19v-7M20 19H4" stroke="#e6c9a4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <div><div class="scope-num">07</div><h3>Google Analytics + Clarity</h3><p>Medición de visitas, productos más consultados, clics en WhatsApp y comportamiento de usuarios.</p></div>
+        <div>
+          <div class="scope-num mono">07</div>
+          <h3>SEO básico y analítica</h3>
+          <p>Estructura inicial para Google, medición de visitas, clics en WhatsApp y productos más consultados.</p>
+        </div>
       </div>
-
       <div class="scope-card">
         <div class="scope-icon">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><rect x="7" y="2" width="10" height="20" rx="2" stroke="#d8b27c" stroke-width="2"/><path d="M11 18h2" stroke="#d8b27c" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><rect x="7" y="2" width="10" height="20" rx="2" stroke="#e6c9a4" stroke-width="2"/><path d="M11 18h2" stroke="#e6c9a4" stroke-width="2" stroke-linecap="round"/></svg>
         </div>
-        <div><div class="scope-num">08</div><h3>Responsive mobile-first</h3><p>Diseño optimizado para celulares, tablets y computadoras, con navegación rápida y clara.</p></div>
+        <div>
+          <div class="scope-num mono">08</div>
+          <h3>Responsive impecable</h3>
+          <p>Diseño optimizado para celular, porque la consulta por WhatsApp ocurre principalmente desde móvil.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -352,18 +432,30 @@ footer .meta a{color:var(--gold);text-decoration:none;font-weight:600}
 
 <section>
   <div class="wrap">
-    <div class="eyebrow fi">— Enfoque comercial · Catálogo digital</div>
-    <div class="feature-block fi d1">
+    <div class="eyebrow fi">La pieza central · Catálogo consultivo</div>
+    <div class="chart-block fi d1">
       <div>
-        <h2>Sin carrito. Sin precios. Sin complicar el proceso comercial.</h2>
-        <p>Los precios pueden depender del corte, peso, disponibilidad, origen o volumen del pedido. Por eso la web funcionará como una vitrina profesional: el cliente descubre el producto, revisa sus características y consulta directamente con MAYSO.</p>
-        <div class="highlight">El objetivo no es automatizar el cobro. El objetivo es generar confianza, facilitar la selección de productos y conseguir más cotizaciones calificadas.</div>
+        <h2>Un catálogo pensado para generar conversación, no para publicar precios.</h2>
+        <p>Los productos se muestran de forma ordenada para que el cliente entienda qué ofrece MAYSO y pueda consultar de inmediato. Esto permite manejar precios variables por volumen, disponibilidad, presentación, cliente recurrente o condiciones comerciales.</p>
+        <div class="disclaimer">Recomendación: no mostrar precios públicos en productos cárnicos si estos dependen de stock, peso, volumen o acuerdos comerciales. La web debe abrir la conversación y el equipo de MAYSO cierra la cotización.</div>
       </div>
-      <div class="steps">
-        <div class="step"><div class="node">1</div><div><h4>El cliente explora</h4><p>Navega por categorías como res, cerdo, cordero, aves, embutidos u otras líneas disponibles.</p></div></div>
-        <div class="step"><div class="node">2</div><div><h4>Revisa el producto</h4><p>Ve fotografía, corte, origen, presentación y descripción sin exponer precios públicamente.</p></div></div>
-        <div class="step"><div class="node">3</div><div><h4>Consulta disponibilidad</h4><p>Presiona el botón de WhatsApp con un mensaje precargado que identifica el producto consultado.</p></div></div>
-        <div class="step"><div class="node">4</div><div><h4>MAYSO cierra la venta</h4><p>El equipo confirma stock, precio, volumen mínimo, entrega y condiciones comerciales.</p></div></div>
+      <div class="catalog-steps">
+        <div class="catalog-step">
+          <div class="node mono">1</div>
+          <div><h4>Categorías claras</h4><p>Res, cerdo, aves, importados, food service, mayoreo o las líneas que MAYSO defina.</p></div>
+        </div>
+        <div class="catalog-step">
+          <div class="node mono">2</div>
+          <div><h4>Ficha de producto</h4><p>Nombre, descripción, presentación, origen, formato de venta y disponibilidad bajo consulta.</p></div>
+        </div>
+        <div class="catalog-step">
+          <div class="node mono">3</div>
+          <div><h4>Consulta por WhatsApp</h4><p>Botón visible en cada ficha con mensaje precargado según el producto seleccionado.</p></div>
+        </div>
+        <div class="catalog-step">
+          <div class="node mono">4</div>
+          <div><h4>Cierre asistido</h4><p>MAYSO responde con precio, stock, condiciones, mínimo de compra y coordinación de entrega.</p></div>
+        </div>
       </div>
     </div>
   </div>
@@ -371,46 +463,55 @@ footer .meta a{color:var(--gold);text-decoration:none;font-weight:600}
 
 <section>
   <div class="wrap">
-    <div class="eyebrow fi">— Analytics · Información para mejorar</div>
+    <div class="eyebrow fi">Conversión · WhatsApp y medición</div>
     <div class="analytics-shell">
       <div class="analytics-copy fi d1">
-        <h2>La web también mostrará qué productos generan más interés.</h2>
-        <p>Configuraremos herramientas de medición para entender cómo llegan los visitantes, qué categorías revisan y cuántos terminan contactando a MAYSO.</p>
+        <h2>La web debe medir cada oportunidad, no solo las ventas cerradas.</h2>
+        <p>Integramos medición para saber qué productos generan más interés, cuántos usuarios hacen clic en WhatsApp y qué secciones ayudan a que el cliente avance hacia la consulta.</p>
         <div class="analytics-list">
           <div class="analytics-item">
             <div class="analytics-icon">
-              <svg viewBox="0 0 56 56" width="26" height="26" fill="none"><rect x="11" y="28" width="7" height="14" rx="3.5" fill="#d8b27c" opacity=".55"/><rect x="24" y="20" width="7" height="22" rx="3.5" fill="#d8b27c" opacity=".75"/><rect x="37" y="13" width="7" height="29" rx="3.5" fill="#d8b27c"/></svg>
+              <svg viewBox="0 0 56 56" width="26" height="26" fill="none"><rect x="11" y="28" width="7" height="14" rx="3.5" fill="#e6c9a4" opacity="0.55"/><rect x="24" y="20" width="7" height="22" rx="3.5" fill="#e6c9a4" opacity="0.75"/><rect x="37" y="13" width="7" height="29" rx="3.5" fill="#e6c9a4"/></svg>
             </div>
-            <div><h3>Google Analytics 4</h3><p>Visitas, ciudades, fuentes de tráfico, páginas más vistas y clics en botones de contacto.</p></div>
+            <div>
+              <h3>Google Analytics 4</h3>
+              <p>Visitas, fuentes de tráfico, páginas más vistas y eventos de contacto desde el lanzamiento.</p>
+            </div>
           </div>
           <div class="analytics-item">
             <div class="analytics-icon">
-              <svg viewBox="0 0 56 56" width="26" height="26" fill="none"><rect x="12" y="12" width="32" height="32" rx="8" stroke="#d8b27c" stroke-width="3"/><circle cx="28" cy="28" r="7" fill="#a94434"/></svg>
+              <svg viewBox="0 0 56 56" width="26" height="26" fill="none"><rect x="12" y="12" width="32" height="32" rx="8" stroke="#e6c9a4" stroke-width="3" opacity="0.85"/><circle cx="28" cy="28" r="7" fill="#ba4b34"/></svg>
             </div>
-            <div><h3>Microsoft Clarity</h3><p>Mapas de calor y grabaciones anónimas para detectar qué secciones atraen más atención.</p></div>
+            <div>
+              <h3>Microsoft Clarity</h3>
+              <p>Mapas de calor y grabaciones para entender cómo navegan los usuarios en móvil y escritorio.</p>
+            </div>
           </div>
           <div class="analytics-item">
             <div class="analytics-icon">
-              <svg viewBox="0 0 56 56" width="26" height="26" fill="none"><path d="M14 18h28v20H14z" stroke="#d8b27c" stroke-width="3"/><path d="M14 20l14 10 14-10" stroke="#d8b27c" stroke-width="3" stroke-linejoin="round"/></svg>
+              <svg viewBox="0 0 56 56" width="26" height="26" fill="none"><path d="M9 16h38v24H21l-8 6v-6H9V16Z" stroke="#e6c9a4" stroke-width="3" stroke-linejoin="round"/><path d="M19 25h18M19 32h11" stroke="#e6c9a4" stroke-width="3" stroke-linecap="round"/></svg>
             </div>
-            <div><h3>Medición de WhatsApp</h3><p>Registro de clics en botones generales, fichas de producto y consultas de cobertura.</p></div>
+            <div>
+              <h3>Clics a WhatsApp</h3>
+              <p>Medición de botones principales, botones por producto y llamada flotante de contacto.</p>
+            </div>
           </div>
         </div>
       </div>
       <div class="analytics-preview fi d2">
         <div class="analytics-svg-card">
-          <div class="mini-label">Productos consultados</div>
-          <svg viewBox="0 0 180 90" fill="none"><rect x="18" y="58" width="26" height="18" rx="4" fill="rgba(216,178,124,.22)"/><rect x="52" y="42" width="26" height="34" rx="4" fill="rgba(216,178,124,.42)"/><rect x="86" y="28" width="26" height="48" rx="4" fill="#d8b27c"/><rect x="120" y="14" width="26" height="62" rx="4" fill="#a94434"/></svg>
-          <div class="mini-note">Identificación de categorías y cortes que despiertan más interés comercial.</div>
+          <div class="mini-label">Consultas por producto</div>
+          <svg viewBox="0 0 180 90" fill="none"><path d="M12 68H168" stroke="rgba(250,246,239,0.15)" stroke-width="2"/><path d="M18 62C36 58 44 36 65 38C86 40 91 54 108 51C126 48 136 22 162 25" stroke="#e6c9a4" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="65" cy="38" r="4.5" fill="#ba4b34"/><circle cx="162" cy="25" r="4.5" fill="#e6c9a4"/></svg>
+          <div class="mini-note">Qué categorías y productos generan más intención de cotización.</div>
         </div>
         <div class="analytics-svg-card">
-          <div class="mini-label">Clics en WhatsApp</div>
-          <svg viewBox="0 0 180 90" fill="none"><path d="M12 68H168" stroke="rgba(247,241,232,.15)" stroke-width="2"/><path d="M18 60C36 58 44 34 65 35C86 36 90 50 108 47C126 44 134 18 162 21" stroke="#d8b27c" stroke-width="4" stroke-linecap="round"/><circle cx="65" cy="35" r="4.5" fill="#a94434"/><circle cx="162" cy="21" r="4.5" fill="#d8b27c"/></svg>
-          <div class="mini-note">Seguimiento de los puntos de la web que generan más conversaciones.</div>
+          <div class="mini-label">Clics a WhatsApp</div>
+          <svg viewBox="0 0 180 90" fill="none"><rect x="18" y="58" width="26" height="18" rx="4" fill="rgba(230,201,164,0.22)"/><rect x="52" y="46" width="26" height="30" rx="4" fill="rgba(230,201,164,0.42)"/><rect x="86" y="30" width="26" height="46" rx="4" fill="#e6c9a4"/><rect x="120" y="16" width="26" height="60" rx="4" fill="#ba4b34"/></svg>
+          <div class="mini-note">Cuántos visitantes pasan del catálogo a una conversación comercial.</div>
         </div>
         <div class="analytics-footer">
           <strong>Incluido desde el lanzamiento</strong>
-          <span>GA4, Clarity y medición de conversiones básicas configuradas desde el primer día.</span>
+          <span>Configuración básica de GA4, Clarity y eventos principales de contacto por WhatsApp.</span>
         </div>
       </div>
     </div>
@@ -419,72 +520,71 @@ footer .meta a{color:var(--gold);text-decoration:none;font-weight:600}
 
 <section>
   <div class="wrap">
-    <div class="eyebrow fi">— Proceso claro · 5 pasos</div>
-    <h2 class="sec-title fi d1" style="margin-bottom:8px">Del contenido actual a una web lista para presentar MAYSO.</h2>
-    <p class="sec-sub fi d2" style="margin-bottom:8px">Trabajo el proyecto personalmente, de principio a fin, sin tercerización.</p>
+    <div class="eyebrow fi">Proceso claro · 5 pasos + mantenimiento</div>
+    <h2 class="sec-title fi d1" style="margin-bottom:8px">Del contenido de MAYSO a una web lista para recibir consultas.</h2>
+    <p class="sec-sub fi d2" style="margin-bottom:8px">Trabajo yo personalmente, de principio a fin. Definimos estructura, contenido, catálogo, WhatsApp y medición antes del lanzamiento.</p>
     <div class="timeline fi d3">
-      <div class="t-step"><span class="node">1</span><div class="when">Paso 1</div><div class="what">Recolección</div><div class="desc">Recibimos logo, fotografías, catálogo, datos de cobertura, registros y contactos.</div></div>
-      <div class="t-step"><span class="node">2</span><div class="when">Paso 2</div><div class="what">Estructura</div><div class="desc">Definimos categorías, navegación, secciones y forma de presentar cada producto.</div></div>
-      <div class="t-step"><span class="node">3</span><div class="when">Paso 3</div><div class="what">Diseño y desarrollo</div><div class="desc">Construimos la web, el catálogo, las fichas y los botones de contacto.</div></div>
-      <div class="t-step"><span class="node">4</span><div class="when">Paso 4</div><div class="what">Revisión</div><div class="desc">Revisamos textos, productos, fotografías, cobertura y detalles finales con MAYSO.</div></div>
-      <div class="t-step"><span class="node">5</span><div class="when">Paso 5</div><div class="what">Publicación</div><div class="desc">Publicamos la web y dejamos Analytics, Clarity y WhatsApp funcionando.</div></div>
+      <div class="t-step"><span class="node">1</span><div class="when">Paso 1</div><div class="what">Descubrimiento</div><div class="desc">Revisamos quién es MAYSO, a qué clientes atiende, qué productos ofrece y qué necesita comunicar.</div></div>
+      <div class="t-step"><span class="node">2</span><div class="when">Paso 2</div><div class="what">Estructura</div><div class="desc">Organizamos secciones, categorías del catálogo, mensajes de WhatsApp y llamados a la acción.</div></div>
+      <div class="t-step"><span class="node">3</span><div class="when">Paso 3</div><div class="what">Diseño y desarrollo</div><div class="desc">Construyo la web responsive, las fichas del catálogo, el contacto directo y la base visual.</div></div>
+      <div class="t-step"><span class="node">4</span><div class="when">Paso 4</div><div class="what">Revisión contigo</div><div class="desc">Ajustamos textos, categorías, orden de productos, enlaces y detalles finales antes de publicar.</div></div>
+      <div class="t-step"><span class="node">5</span><div class="when">Paso 5</div><div class="what">Lanzamiento</div><div class="desc">Publicamos la web, dejamos la medición activa y comprobamos que WhatsApp funcione correctamente.</div></div>
     </div>
   </div>
 </section>
 
 <section id="inversion">
   <div class="wrap">
-    <div class="eyebrow fi">— Inversión · Propuesta para MAYSO</div>
-    <h2 class="sec-title fi d1" style="margin-bottom:52px">Una web catálogo profesional, sin costos innecesarios de tienda online.</h2>
+    <div class="eyebrow fi">Inversión · Propuesta para MAYSO</div>
+    <h2 class="sec-title fi d1" style="margin-bottom:52px">Una web comercial, clara y preparada para generar consultas.</h2>
 
     <div class="inv-grid fi d2">
       <div class="inv-card feat">
-        <div class="badge">Propuesta especial</div>
-        <div class="tag">— Diseño y desarrollo web · MAYSO</div>
-        <h3>Web catálogo completa, diseñada para presentar productos y generar cotizaciones.</h3>
+        <div class="badge">Proyecto recomendado</div>
+        <div class="tag">Web institucional · Catálogo sin precios</div>
+        <h3>Sitio completo para presentar MAYSO y convertir visitas en conversaciones por WhatsApp.</h3>
+        <div class="price-old mono">$699 USD</div>
         <div class="price">$299<span class="small">USD</span></div>
-        <div class="price-note">Pago único · diseño personalizado · sin carrito · sin precios públicos</div>
+        <div class="price-note">Pago único · 50% al inicio y 50% al lanzamiento</div>
         <ul>
-          <li><span class="what">Diseño web personalizado</span><span class="val">✓</span></li>
-          <li><span class="what">Catálogo de productos sin precios</span><span class="val">✓</span></li>
-          <li><span class="what">Fichas de producto</span><span class="val">✓</span></li>
-          <li><span class="what">Sección de planta y proceso</span><span class="val">✓</span></li>
-          <li><span class="what">Cobertura y entregas</span><span class="val">✓</span></li>
-          <li><span class="what">Certificaciones y clientes</span><span class="val">✓</span></li>
-          <li><span class="what">Botones y mensajes de WhatsApp</span><span class="val">✓</span></li>
-          <li><span class="what">Google Analytics 4 + Microsoft Clarity</span><span class="val">✓</span></li>
-          <li><span class="what">Diseño responsive</span><span class="val">✓</span></li>
+          <li><span class="what">Diseño institucional moderno</span><span class="val">✓</span></li>
+          <li><span class="what">Home profesional y responsive</span><span class="val">✓</span></li>
+          <li><span class="what">Sección “Quiénes somos”</span><span class="val">✓</span></li>
+          <li><span class="what">Catálogo sin precios públicos</span><span class="val">✓</span></li>
+          <li><span class="what">Fichas de producto con WhatsApp</span><span class="val">✓</span></li>
+          <li><span class="what">Cobertura, confianza y proceso de atención</span><span class="val">✓</span></li>
+          <li><span class="what">SEO básico + Google Analytics 4</span><span class="val">✓</span></li>
+          <li><span class="what">Microsoft Clarity</span><span class="val">✓</span></li>
         </ul>
       </div>
 
       <div class="inv-card">
-        <div class="tag">— Mantenimiento mensual</div>
-        <h3>Soporte, cambios y actualización continua del catálogo.</h3>
-        <div class="price">$50<span class="small">/mes</span></div>
-        <div class="price-note">Recurrente · cancelación flexible</div>
+        <div class="tag">Mantenimiento mensual</div>
+        <h3>Soporte, cambios de contenido y optimización continua.</h3>
+        <div class="price-old mono">$99 / mes</div>
+        <div class="price">$49<span class="small">/mes</span></div>
+        <div class="price-note">Opcional · recurrente · se puede cancelar cuando quieras</div>
         <ul>
-          <li><span class="what">Cambios de texto, imágenes y productos</span><span class="val">✓</span></li>
-          <li><span class="what">Actualización del catálogo</span><span class="val">✓</span></li>
-          <li><span class="what">Soporte técnico directo</span><span class="val">✓</span></li>
-          <li><span class="what">Monitoreo básico de la web</span><span class="val">✓</span></li>
-          <li><span class="what">Revisión de Analytics y Clarity</span><span class="val">✓</span></li>
+          <li><span class="what">Actualizaciones de productos y contenido</span><span class="val">✓</span></li>
+          <li><span class="what">Soporte técnico directo conmigo</span><span class="val">✓</span></li>
+          <li><span class="what">Revisión de métricas y clics a WhatsApp</span><span class="val">✓</span></li>
+          <li><span class="what">Optimización del catálogo y llamados a la acción</span><span class="val">✓</span></li>
         </ul>
       </div>
     </div>
-
-    <p class="inv-note fi d3">Forma de pago del diseño: 50% al inicio y 50% al momento de publicar la web. El mantenimiento se factura mensualmente.</p>
+    <p class="inv-note fi d3">No incluye hosting, dominio, fotografías profesionales, licencias de terceros, producción de contenido avanzado ni costos de herramientas externas. Se cotizan por separado si aplican.</p>
 
     <div class="cta-strip fi d4">
-      <div class="eyebrow" style="margin-bottom:14px">— Siguiente paso</div>
-      <h3>Hagamos que el catálogo de MAYSO trabaje también como vendedor.</h3>
-      <p>Una web clara, moderna y profesional para mostrar productos, transmitir confianza y facilitar cada cotización.</p>
+      <div class="eyebrow" style="margin-bottom:14px">Empieza hoy mismo</div>
+      <h3>Que los clientes vean el catálogo y consulten por WhatsApp al instante.</h3>
+      <p>La nueva web debe hacer que MAYSO se vea profesional, ordenado y fácil de contactar desde cualquier celular.</p>
       <div class="next-steps">
-        <span><strong>01</strong> Confirman la propuesta</span>
-        <span><strong>02</strong> Recibimos contenido y fotografías</span>
+        <span><strong>01</strong> Confirmamos la propuesta</span>
+        <span><strong>02</strong> Definimos categorías y WhatsApp</span>
         <span><strong>03</strong> Iniciamos con el 50% de anticipo</span>
       </div>
       <div class="cta-buttons">
-        <a class="btn btn-primary" href="https://wa.me/593969349833?text=Hola%20Jose%2C%20quiero%20avanzar%20con%20la%20propuesta%20de%20MAYSO." target="_blank" rel="noopener">WhatsApp · 096 934 9833 <span class="arrow">→</span></a>
+        <a class="btn btn-primary" href="https://wa.me/593969349833?text=Hola%20José%2C%20quiero%20avanzar%20con%20la%20propuesta%20de%20MAYSO." target="_blank" rel="noopener">WhatsApp · 096 934 9833 <span class="arrow">→</span></a>
         <a class="btn btn-ghost" href="mailto:thenextwebec@gmail.com?subject=Propuesta%20MAYSO">thenextwebec@gmail.com <span class="arrow">→</span></a>
       </div>
     </div>
@@ -493,10 +593,9 @@ footer .meta a{color:var(--gold);text-decoration:none;font-weight:600}
 
 <footer>
   <div class="sign">
-    <div class="brand-icon"></div>
     <div>
-      <div class="brand-name">Next<span class="accent" style="color:var(--gold)">WebEC</span></div>
-      <div class="mono" style="font-size:10px;color:var(--muted);letter-spacing:.1em;margin-top:2px">Diseño web &amp; experiencias digitales</div>
+      <div class="brand-name">Next<span class="accent" style="color:var(--cream)">WebEC</span></div>
+      <div class="mono" style="font-size:10px;color:var(--muted);letter-spacing:0.1em;margin-top:2px">Diseño web &amp; experiencias digitales</div>
     </div>
   </div>
   <div class="meta">
@@ -506,18 +605,19 @@ footer .meta a{color:var(--gold);text-decoration:none;font-weight:600}
   </div>
 </footer>
 
-<a href="https://wa.me/593969349833?text=Hola%20Jose%2C%20tengo%20una%20pregunta%20sobre%20la%20propuesta%20de%20MAYSO."
+<a href="https://wa.me/593969349833?text=Hola%20José%2C%20tengo%20una%20pregunta%20sobre%20la%20propuesta%20de%20MAYSO."
    target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="WhatsApp">
   <svg viewBox="0 0 24 24" fill="#fff"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.12h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.84-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.35c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.2-8.25 8.2Zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.4-.12-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.99-1.22-.73-.66-1.23-1.46-1.37-1.71-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.36-.77-1.86-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01a.92.92 0 0 0-.67.31c-.23.25-.87.85-.87 2.08 0 1.23.89 2.41 1.02 2.58.12.17 1.75 2.67 4.24 3.75.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29Z"/></svg>
 </a>
 
 <script>
 (function(){
-  var obs=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in')});
-  },{threshold:.10});
-  document.querySelectorAll('.fi').forEach(function(el){obs.observe(el)});
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.10 });
+  document.querySelectorAll('.fi').forEach(function(el){ obs.observe(el); });
 })();
 </script>
+
 </body>
 </html>
